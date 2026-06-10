@@ -1,13 +1,13 @@
 package edu.norcocollege.cis18b.week3.coffeeshop;
 
- import java.math.BigDecimal;
+import java.math.BigDecimal;
 
- public abstract class Beverage extends MenuItem {
-
+public abstract class Beverage extends MenuItem {
+    
     public enum Size {
         SMALL, MEDIUM, LARGE
     }
-
+    
     private Size size;
 
     public Beverage(String sku, String name, BigDecimal basePrice, Size size) {
@@ -28,4 +28,4 @@ package edu.norcocollege.cis18b.week3.coffeeshop;
     public BigDecimal getPrice() {
         return super.getPrice().multiply(sizeMultiplier());
     }
- }
+}

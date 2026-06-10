@@ -26,6 +26,6 @@ public class PricingCatalog {
         if (productKey == null || !prices.containsKey(productKey)) {
             throw new IllegalArgumentException("Unknown product key");
         }
-        return prices.get(productKey); // Added the missing return statement!
+        return prices.get(productKey);
     }
 }

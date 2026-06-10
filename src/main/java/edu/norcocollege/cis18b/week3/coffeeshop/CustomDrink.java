@@ -5,13 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomDrink extends Beverage {
-
-    public enum Milk {WHOLE, OAT, ALMOND, SKIM}
-    public enum Syrup {VANILLA, CARAMEL, HAZELNUT, NONE}
-    public enum Temperature {HOT, ICED}
+    
+    public enum Milk { WHOLE, OAT, ALMOND, SKIM }
+    public enum Syrup { VANILLA, CARAMEL, HAZELNUT, NONE }
+    public enum Temperature { HOT, ICED }
 
     private CustomDrink(Builder builder) {
-        // Fixed the lowercase 'builder' variable here
         super(builder.sku, builder.name, calculateBasePrice(builder), builder.size);
     }
 
@@ -39,15 +38,15 @@ public class CustomDrink extends Beverage {
         private String sku;
         private String name;
         private Size size = Size.MEDIUM;
-        private Milk milk = Milk.WHOLE; // Fixed MILK to Milk
+        private Milk milk = Milk.WHOLE;
         private Syrup syrup = Syrup.NONE;
         private Temperature temperature = Temperature.HOT;
         private int espressoShots = 1;
         private List<String> extras = new ArrayList<>();
 
-        public Builder(String sku, String name) {
-            this.sku = sku;
-            this.name = name;
+        public Builder() {
+            this.sku = "CUSTOM";
+            this.name = "Custom Drink";
         }
 
         public Builder size(Size size) {
@@ -85,7 +84,7 @@ public class CustomDrink extends Beverage {
             this.extras.add(extra);
             return this;
         }
-        
+
         public CustomDrink build() {
             return new CustomDrink(this);
         }

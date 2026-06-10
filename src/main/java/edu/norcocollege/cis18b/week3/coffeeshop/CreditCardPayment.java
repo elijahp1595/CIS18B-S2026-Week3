@@ -15,7 +15,7 @@ public class CreditCardPayment implements PaymentMethod {
 
     @Override
     public PaymentReceipt pay(String orderId, BigDecimal amount) {
-        String method = "CREDIT_CARD(****" + last4 + ")"; // Added the 4th asterisk
+        String method = "CREDIT_CARD(****" + last4 + ")";
         return new PaymentReceipt(orderId, amount, method, Instant.now());
     }
 }
