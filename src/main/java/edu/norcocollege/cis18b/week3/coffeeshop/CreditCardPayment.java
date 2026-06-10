@@ -1,4 +1,4 @@
-package edu.norco.cis18b.week3.coffeeshop;
+package edu.norcocollege.cis18b.week3.coffeeshop;
 
 import java.math.BigDecimal;
 import java.time.Instant;
@@ -15,7 +15,7 @@ public class CreditCardPayment implements PaymentMethod {
 
     @Override
     public PaymentReceipt pay(String orderId, BigDecimal amount) {
-        String method = "CREDIT_CARD(***" + last4 + ")";
+        String method = "CREDIT_CARD(****" + last4 + ")"; // Added the 4th asterisk
         return new PaymentReceipt(orderId, amount, method, Instant.now());
     }
 }

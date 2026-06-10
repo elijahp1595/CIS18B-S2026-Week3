@@ -1,4 +1,4 @@
-package edu.norco.cis18b.week3.coffeeshop;
+package edu.norcocollege.cis18b.week3.coffeeshop;
 
 import java.math.BigDecimal;
 import java.time.Instant;
@@ -16,7 +16,7 @@ public class GiftCardPayment implements PaymentMethod {
     @Override
     public PaymentReceipt pay(String orderId, BigDecimal amount) {
         if (balance.compareTo(amount) < 0) {
-            throw new IllegalArgumentException("Insufficent balance");
+            throw new IllegalStateException("Insufficient balance"); // Changed exception type
         }
         balance = balance.subtract(amount);
         return new PaymentReceipt(orderId, amount, "GIFT_CARD", Instant.now());

@@ -1,17 +1,17 @@
-package edu.norco.cis18b.week3.coffeeshop;
+package edu.norcocollege.cis18b.week3.coffeeshop;
 
 import java.math.BigDecimal;
 
 public class MenuItem {
     private String sku;
-    private string name;
+    private String name;
     private BigDecimal price;
 
     public MenuItem(String sku, String name, BigDecimal price) {
         if (sku == null || sku.trim().isEmpty()) {
             throw new IllegalArgumentException("SKU cannot be null or blank");
         }
-        if (name == null || sku.trim().isEmpty()) {
+        if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException("Name cannot be null or blank");
         }
         if (price == null || price.compareTo(BigDecimal.ZERO) < 0) {
@@ -28,7 +28,7 @@ public class MenuItem {
     public String getName() {
         return name;
     }
-    public String getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
